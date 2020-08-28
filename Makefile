@@ -43,7 +43,7 @@ vendor: ## Vendor Go Dependencies. Example: make vendor
 .PHONY: vendor
 
 clean: ## Clean up the workspace. Example: make clean
-	rm -f library
+	rm -f library library.log
 	rm -rf _output/
 .PHONY: clean
 

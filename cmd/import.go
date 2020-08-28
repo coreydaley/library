@@ -164,8 +164,8 @@ var importCmd = &cobra.Command{
 
 			}(i, config)
 		}
-
 		wg.Wait()
+		klog.Infof("Import completed")
 	},
 }
 
@@ -173,7 +173,9 @@ func init() {
 	rootCmd.AddCommand(importCmd)
 
 	klog.InitFlags(nil)
+
 	flag.Parse()
+
 	pflag.CommandLine.AddGoFlagSet(flag.CommandLine)
 
 	importCmd.Flags().StringVar(&config, "config", "", "A JSON or YAML configuration file")
